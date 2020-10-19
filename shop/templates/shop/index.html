@@ -1,63 +1,43 @@
 {% extends 'shop/basic.html' %}
 
-{%  block css  %}
-
-.col-md-3 {
+{%  block title%} My Awesome Cart Best Ecommerce Website {% endblock %}
+{% block css %}
+.col-md-3
+{
 display: inline-block;
-margin-left: -4px;
+margin-left:-4px;
 }
-
+.carousel-indicators .active {
+background-color: blue;
+}
 .col-md-3 img{
-width: 245px;
-height: 250px;
-background: #FFFFFF;
-
-border: 10px solid #CCCCCC;
-border-radius: 5px 5px 5px 5px;
-padding: 5px;
+width: 170px;
+height: 200px;
 }
+body .carousel-indicator li{
 
-
-
-body .carousel-control-indicator li
-{
-background-color: white;
+background-color: blue;
 }
-
-.carousel-indicators li
-{
-background-color: #7270fc;
+body .carousel-indicators{
+bottom: -40px;
 }
-
-
-body .carousel-control-prev-icon body .carousel-control-next-icon {
-background-color: white;
-}
-
-body .no-padding {
-padding-left: 0;
-padding-right: 0;
+.carousel-indicators li{
+    background-color: #7270fc;
 }
 body .carousel-control-prev-icon,
 body .carousel-control-next-icon{
 background-color: blue;
 }
-
 .carousel-control-prev,
 .carousel-control-next{
-top:auto;
-bottom:auto;
-padding-top:222px;
+top: auto;
+bottom: auto;
+padding-top: 222px;
 }
-
-body .carousel-indicators {
-bottom: -40px;
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
 }
-
-.carousel-indicators .active {
-background-color: blue;
-}
-
 {% endblock css %}
 
 {%  block body  %}
