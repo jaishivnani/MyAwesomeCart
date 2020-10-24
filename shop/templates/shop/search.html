@@ -43,6 +43,7 @@ padding-right: 0;
 
 {% block body %}
 {% load static %}
+
 <div class="container">
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
@@ -118,7 +119,6 @@ $('.divpr').on('click', 'button.cart', function() {
         price = document.getElementById('price'+idstr).innerHTML;
 
         cart[idstr] = [qty, name, parseInt(price)];
-
     }
     updateCart(cart);
 });
@@ -136,10 +136,11 @@ function updatePopover(cart) {
         popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
         i = i + 1;
     }
-    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
-    console.log(popStr);
+    popStr = popStr + "</div> <a href='/shop/checkout/'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
+    $.fn.tooltip.Constructor.Default.whiteList.button = [];
     document.getElementById('popcart').setAttribute('data-content', popStr);
     $('#popcart').popover('show');
+    document.getElementById('clearCart').addEventListener('click', clearCart);
 }
 
 function clearCart() {
@@ -177,5 +178,7 @@ $('.divpr').on("click", "button.plus", function() {
     document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
     updateCart(cart);
 });
+
 </script>
+
 {% endblock %}

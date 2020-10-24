@@ -84,7 +84,8 @@
     console.log(cart);
     var sum = 0;
     var totalPrice = 0;
-    if ($.isEmptyObject(cart)) {
+    if ($.isEmptyObject(cart)) 
+    {
         //If Object is Empty
         mystr = `Your cart is empty, please add some items to your cart before checking`
 
@@ -101,7 +102,7 @@
                     <span class="badge badge-primary badge-pill">${qty}</span>
                 </li>`
 
-            $('#items').append(mystr);
+           $('#items').append(mystr);
         }
     }
     document.getElementById('cart').innerHTML = sum;
